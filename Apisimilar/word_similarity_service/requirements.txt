@@ -2,3 +2,6 @@ fastapi
 uvicorn
 fasttext-wheel
 pydantic
+httpx
+ratelimit
+backoff

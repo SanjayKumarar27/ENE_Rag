@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  word_similarity_service:
+    build:
+      context: ./word_similarity_service
+    volumes:
+      - ./word_similarity_service/models:/app/models
+    ports:
+      - "8001:8001"
+
+  api_gateway:
+    build:
+      context: ./api_gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - word_similarity_service
